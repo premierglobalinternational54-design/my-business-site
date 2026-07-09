@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>About Us - S.R. Premier</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body, html { width: 100%; min-height: 100%; font-family: 'Montserrat', sans-serif; background-color: #040914; overflow-x: hidden; color: #fff; }
+        
+        #particles-js { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: 1; pointer-events: none; }
+        
+        /* NAVIGATION */
+        .desktop-nav { position: fixed; top: 0; left: 0; width: 100%; padding: 30px 50px; display: flex; justify-content: center; align-items: center; gap: 60px; z-index: 100; background: linear-gradient(to bottom, rgba(4, 9, 20, 0.95) 0%, rgba(4, 9, 20, 0) 100%); border-bottom: 1px solid rgba(212, 175, 55, 0.15); backdrop-filter: blur(8px); }
+        .desktop-nav a { font-family: 'Playfair Display', serif; color: #d4af37; text-decoration: none; font-size: 15px; letter-spacing: 3px; transition: all 0.4s ease; font-weight: 500; text-transform: uppercase; }
+        
+        .menu-btn { display: none; position: fixed; top: 25px; right: 25px; z-index: 1000; cursor: pointer; flex-direction: column; gap: 6px; }
+        .menu-btn span { width: 30px; height: 2px; background-color: #d4af37; transition: 0.3s; }
+
+        /* CONTENT */
+        .about-wrapper { position: relative; z-index: 50; max-width: 1000px; margin: 150px auto 50px; padding: 0 20px; }
+        .section-title { font-family: 'Playfair Display', serif; font-size: 3.8rem; text-align: center; background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 5px; font-weight: 700; }
+        .section-subtitle { text-align: center; font-size: 1rem; letter-spacing: 6px; color: #d4af37; margin-bottom: 60px; text-transform: uppercase; }
+
+        .content-box { background: rgba(10, 15, 25, 0.6); border: 1px solid rgba(212, 175, 55, 0.15); padding: 50px; border-radius: 8px; margin-bottom: 40px; box-shadow: 0 15px 35px rgba(0,0,0,0.4); backdrop-filter: blur(5px); }
+        .content-box h3 { font-family: 'Playfair Display', serif; color: #f3e5ab; font-size: 2.2rem; margin-bottom: 25px; border-left: 3px solid #d4af37; padding-left: 20px; }
+        .content-box p { font-size: 1.1rem; line-height: 2; color: #dcdcdc; text-align: justify; margin-bottom: 20px; }
+
+        .vm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+        .vm-box { background: rgba(10, 15, 25, 0.6); border-top: 2px solid #d4af37; padding: 40px 30px; border-radius: 8px; text-align: center; backdrop-filter: blur(5px); }
+        .vm-box h3 { font-family: 'Playfair Display', serif; color: #d4af37; font-size: 2rem; margin-bottom: 20px; }
+
+        /* LEADERSHIP */
+        .leadership-box { text-align: center; margin-top: 40px; padding-top: 40px; border-top: 1px solid rgba(212, 175, 55, 0.2); }
+        .leader-name { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: #f3e5ab; margin-bottom: 10px; letter-spacing: 2px; }
+        .leader-title { font-size: 1.2rem; color: #d4af37; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 40px; font-weight: 500; }
+
+        /* SLIDER */
+        .branches-title { font-family: 'Playfair Display', serif; font-size: 2.5rem; text-align: center; color: #d4af37; margin-bottom: 30px; }
+        .slider-container { width: 100%; max-width: 600px; margin: 0 auto 50px; height: 350px; position: relative; overflow: hidden; border: 2px solid #d4af37; border-radius: 10px; }
+        .slider { display: flex; width: 300%; height: 100%; animation: slide 12s infinite; }
+        .slide { width: 100%; height: 100%; }
+        .slide img { width: 100%; height: 100%; object-fit: cover; }
+        @keyframes slide { 0%, 30% { transform: translateX(0); } 35%, 65% { transform: translateX(-33.33%); } 70%, 100% { transform: translateX(-66.66%); } }
+
+        /* MOBILE VIEW */
+        @media (max-width: 768px) {
+            .menu-btn { display: flex; }
+            .desktop-nav { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(4, 9, 20, 0.98); flex-direction: column; justify-content: center; gap: 40px; transform: translateY(-100%); transition: 0.5s; }
+            .desktop-nav.active { transform: translateY(0); }
+            .section-title { font-size: 2.2rem; }
+            .vm-grid { grid-template-columns: 1fr; }
+            .content-box { padding: 25px; }
+            .leader-name { font-size: 1.6rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="particles-js"></div>
+
+    <div class="menu-btn" id="menuBtn" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+
+    <nav class="desktop-nav" id="navMenu">
+        <a href="Home.html">HOME</a><a href="service.html">SERVICES</a><a href="about.html">ABOUT</a><a href="logistics.html">LOGISTICS</a><a href="contact.html">CONTACT</a>
+    </nav>
+
+    <div class="about-wrapper">
+        <h1 class="section-title">ABOUT US</h1>
+        <p class="section-subtitle">Excellence in Every Endeavor</p>
+
+        <div class="content-box">
+            <h3>Our Heritage</h3>
+            <p>Welcome to S.R. Premier Global International, an elite enterprise dedicated to redefining the standards of premium business solutions. Built on a foundation of uncompromising quality and visionary foresight, we command a diverse portfolio encompassing 27 distinct sectors. From bespoke Tourism Services and advanced ICT Solutions to high-end Electronics and Logistics, our multifaceted expertise ensures that we stand as an unparalleled global partner.</p>
+        </div>
+
+        <div class="vm-grid">
+            <div class="vm-box"><h3>Our Vision</h3><p>To stand universally recognized as the ultimate global partner in diversified business solutions, establishing the highest global benchmark for excellence.</p></div>
+            <div class="vm-box"><h3>Our Mission</h3><p>To empower and elevate our clients by orchestrating a comprehensive suite of elite services and products.</p></div>
+        </div>
+
+        <div class="content-box">
+            <h3>Executive Leadership</h3>
+            <p style="text-align: center;">At the core of our enduring success is a visionary leadership syndicate, meticulously guiding S.R. Premier towards sustainable global prominence.</p>
+            <div class="leadership-box">
+                <div class="leader-name">Suranga Chaminda Rathnayaka</div>
+                <div class="leader-title">Shareholder</div>
+                <div class="leader-name" style="margin-top: 30px;">Kasun Ekanayaka</div>
+                <div class="leader-title">Director</div>
+            </div>
+        </div>
+
+        <h2 class="branches-title">OUR BRANCHES</h2>
+        <div class="slider-container">
+            <div class="slider">
+                <div class="slide"><img src="photo1.jpg" alt="Branch 1"></div>
+                <div class="slide"><img src="photo2.jpg" alt="Branch 2"></div>
+                <div class="slide"><img src="photo3.jpg" alt="Branch 3"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        function toggleMenu() { document.getElementById('navMenu').classList.toggle('active'); }
+        particlesJS("particles-js", { "particles": { "number": { "value": 60 }, "color": { "value": "#d4af37" }, "opacity": { "value": 0.3 } } });
+    </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourism Services - S.R. Premier</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #040914; color: #fff; font-family: 'Montserrat', sans-serif; overflow-x: hidden; }
+        #particles-js { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: 1; pointer-events: none; }
+        
+        .hero-section { position: relative; height: 50vh; display: flex; align-items: center; justify-content: center; z-index: 50; }
+        .hero-title { font-family: 'Playfair Display', serif; font-size: 3.5rem; color: #fff; z-index: 2; letter-spacing: 5px; text-transform: uppercase; }
+
+        .content-wrapper { position: relative; z-index: 50; max-width: 1000px; margin: 20px auto 50px; padding: 0 20px; text-align: center; }
+        
+        .btn-back { display: inline-block; padding: 10px 25px; border: 1px solid #d4af37; color: #d4af37; text-decoration: none; border-radius: 30px; margin-bottom: 20px; transition: 0.3s; font-size: 0.9rem; }
+        .btn-back:hover { background: #d4af37; color: #040914; }
+
+        .description { margin-bottom: 40px; line-height: 1.8; color: #ccc; font-size: 1.1rem; }
+
+        .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 40px 0; }
+        .gallery img { width: 100%; height: 250px; object-fit: cover; border-radius: 8px; border: 1px solid #d4af37; transition: 0.4s; }
+        .gallery img:hover { transform: scale(1.05); }
+
+        .btn-whatsapp { display: inline-block; padding: 18px 50px; background: #25D366; color: white; text-decoration: none; font-size: 1.1rem; border-radius: 50px; font-weight: bold; margin-top: 30px; transition: 0.3s; box-shadow: 0 0 20px rgba(37, 211, 102, 0.4); }
+        .btn-whatsapp:hover { background: #128C7E; transform: scale(1.05); }
+
+        /* මොබයිල් එකට හරියන වෙනස්කම් විතරයි මෙතන තියෙන්නේ */
+        @media (max-width: 768px) { 
+            .hero-section { height: 30vh; } 
+            .hero-title { font-size: 1.8rem; letter-spacing: 2px; } 
+            .gallery { grid-template-columns: 1fr; gap: 15px; }
+            .gallery img { height: 200px; }
+            .btn-whatsapp { padding: 15px 30px; font-size: 1rem; width: 90%; }
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+
+    <div class="hero-section">
+        <h1 class="hero-title">Tourism Services</h1>
+    </div>
+
+    <div class="content-wrapper">
+        <a href="Home.html" class="btn-back">← GO BACK</a>
+        
+        <p class="description">
+            Experience the wonders of Sri Lanka with our bespoke, luxury tour packages. 
+            From historic cultural sites to serene nature retreats, we ensure your journey is comfortable, 
+            safe, and unforgettable. Let us curate the perfect itinerary tailored just for you.
+        </p>
+        
+        <div class="gallery">
+            <img src="tour1.jpg" alt="Tourism 1">
+            <img src="tour2.jpg" alt="Tourism 2">
+            <img src="tour3.jpg" alt="Tourism 3">
+            <img src="tour4.jpg" alt="Tourism 4">
+            <img src="tour5.jpg" alt="Tourism 5">
+            <img src="tour6.jpg" alt="Tourism 6">
+        </div>
+
+        <p>Plan your luxury tour with our expert team today.</p>
+        
+        <a href="https://wa.me/94718888609?text=I%20would%20like%20to%20book%20a%20tour!" class="btn-whatsapp" target="_blank">
+            BOOK VIA WHATSAPP
+        </a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS("particles-js", {
+            "particles": { "number": { "value": 50 }, "color": { "value": "#d4af37" }, "opacity": { "value": 0.3 } },
+            "interactivity": { "detect_on": "canvas" }, "retina_detect": true
+        });
+    </script>
+</body>
+</html>

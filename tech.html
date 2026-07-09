@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech & Digital - S.R. Premier</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #040914; color: #fff; font-family: 'Montserrat', sans-serif; overflow-x: hidden; }
+        #particles-js { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: 1; }
+        
+        .content-wrapper { position: relative; z-index: 50; max-width: 800px; margin: 50px auto; padding: 0 20px; text-align: center; }
+        
+        .btn-back { display: inline-block; padding: 10px 25px; border: 1px solid #d4af37; color: #d4af37; text-decoration: none; border-radius: 30px; margin-bottom: 30px; transition: 0.3s; }
+        .btn-back:hover { background: #d4af37; color: #040914; }
+
+        .hero-title { font-family: 'Playfair Display', serif; font-size: 3.5rem; color: #d4af37; margin-bottom: 20px; }
+        
+        .main-photo { width: 100%; max-height: 400px; object-fit: cover; border-radius: 15px; border: 2px solid #d4af37; margin-bottom: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+
+        .services-list { text-align: left; margin: 30px 0; padding: 20px; background: rgba(255,255,255,0.05); border-radius: 10px; }
+        .services-list h3 { color: #d4af37; margin-bottom: 10px; font-family: 'Playfair Display', serif; }
+        .services-list ul { list-style: none; color: #ccc; }
+        .services-list li { margin-bottom: 10px; padding-left: 20px; position: relative; }
+        .services-list li::before { content: "•"; color: #d4af37; position: absolute; left: 0; font-weight: bold; }
+
+        .btn-whatsapp { display: inline-block; padding: 20px 60px; background: #25D366; color: white; text-decoration: none; font-size: 1.2rem; border-radius: 50px; font-weight: bold; transition: 0.3s; box-shadow: 0 0 20px rgba(37, 211, 102, 0.4); }
+        .btn-whatsapp:hover { background: #128C7E; transform: scale(1.05); }
+
+        @media (max-width: 768px) { .hero-title { font-size: 2.5rem; } }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+
+    <div class="content-wrapper">
+        <a href="Home.html" class="btn-back">← GO BACK</a>
+        
+        <h1 class="hero-title">TECH & DIGITAL</h1>
+        
+        <!-- ඔයාගේ Tech වලට ගැළපෙන ෆොටෝ එක (tech.jpg) -->
+        <img src="tech.jpg" alt="Tech & Digital Services" class="main-photo">
+        
+        <div class="services-list">
+            <h3>Our Digital Solutions</h3>
+            <ul>
+                <li><strong>Web & Digital Infrastructure:</strong> Modern, responsive websites and scalable digital platforms built for the future.</li>
+                <li><strong>IT & Cybersecurity Support:</strong> Secure account management, data protection, and reliable technical support.</li>
+                <li><strong>Digital Transformation:</strong> Streamlining business operations through automation and innovative technology.</li>
+            </ul>
+        </div>
+        
+        <a href="https://wa.me/94718888609?text=I%20would%20like%20to%20know%20more%20about%20your%20tech%20services!" class="btn-whatsapp" target="_blank">
+            GET TECH SUPPORT
+        </a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS("particles-js", {
+            "particles": { "number": { "value": 50 }, "color": { "value": "#d4af37" }, "opacity": { "value": 0.3 } },
+            "interactivity": { "detect_on": "canvas" }, "retina_detect": true
+        });
+    </script>
+</body>
+</html>

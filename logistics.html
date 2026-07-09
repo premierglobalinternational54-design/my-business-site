@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logistics & Transport - S.R. Premier</title>
+    
+    <!-- Ultra-Luxury Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body, html { width: 100%; min-height: 100%; font-family: 'Montserrat', sans-serif; background-color: #040914; overflow-x: hidden; color: #fff; }
+        
+        #particles-js { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: 1; }
+        
+        /* ====== PREMIUM DESKTOP NAVIGATION BAR ====== */
+        .desktop-nav { position: fixed; top: 0; left: 0; width: 100%; padding: 30px 50px; display: flex; justify-content: center; align-items: center; gap: 60px; z-index: 100; background: linear-gradient(to bottom, rgba(4, 9, 20, 0.95) 0%, rgba(4, 9, 20, 0) 100%); border-bottom: 1px solid rgba(212, 175, 55, 0.15); backdrop-filter: blur(8px); }
+        .desktop-nav a { font-family: 'Playfair Display', serif; color: #d4af37; text-decoration: none; font-size: 15px; letter-spacing: 3px; transition: all 0.4s ease; font-weight: 500; position: relative; padding-bottom: 5px; text-transform: uppercase; }
+        .desktop-nav a::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 0; height: 1px; background-color: #f3e5ab; transition: width 0.4s ease; }
+        .desktop-nav a:hover { color: #f3e5ab; text-shadow: 0 0 10px rgba(212, 175, 55, 0.5); }
+        .desktop-nav a:hover::after { width: 100%; }
+
+        /* ====== MOBILE MENU TOGGLE ====== */
+        .menu-btn { display: none; position: fixed; top: 25px; right: 25px; z-index: 1000; cursor: pointer; flex-direction: column; gap: 6px; }
+        .menu-btn span { width: 30px; height: 2px; background-color: #d4af37; transition: 0.3s; }
+
+        /* ====== LOGISTICS CONTENT STYLES ====== */
+        .logistics-wrapper { position: relative; z-index: 50; max-width: 1000px; margin: 150px auto 50px; padding: 0 20px; }
+        
+        /* Luxury Section Titles */
+        .section-title { font-family: 'Playfair Display', serif; font-size: 3.8rem; text-align: center; background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 5px; font-weight: 700; }
+        .section-subtitle { text-align: center; font-size: 1rem; letter-spacing: 6px; color: #d4af37; margin-bottom: 60px; text-transform: uppercase; }
+
+        /* Content Boxes */
+        .content-box { background: rgba(10, 15, 25, 0.6); border: 1px solid rgba(212, 175, 55, 0.15); padding: 50px; border-radius: 8px; margin-bottom: 40px; box-shadow: 0 15px 35px rgba(0,0,0,0.4); backdrop-filter: blur(5px); }
+        .content-box h3 { font-family: 'Playfair Display', serif; color: #f3e5ab; font-size: 2.2rem; margin-bottom: 25px; border-left: 3px solid #d4af37; padding-left: 20px; font-weight: 600; }
+        .content-box h4 { font-family: 'Playfair Display', serif; color: #d4af37; font-size: 1.5rem; margin-top: 30px; margin-bottom: 10px; font-weight: 500; }
+        .content-box p { font-size: 1.1rem; line-height: 2; color: #dcdcdc; text-align: justify; margin-bottom: 15px; font-weight: 300; }
+
+        /* Services Grid */
+        .vm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+        .vm-box { background: rgba(10, 15, 25, 0.6); border-top: 2px solid #d4af37; padding: 40px 30px; border-radius: 8px; text-align: center; box-shadow: 0 15px 35px rgba(0,0,0,0.4); backdrop-filter: blur(5px); transition: transform 0.4s ease; }
+        .vm-box:hover { transform: translateY(-10px); border-top: 2px solid #f3e5ab; }
+        .vm-box h3 { font-family: 'Playfair Display', serif; color: #d4af37; font-size: 1.8rem; margin-bottom: 20px; font-weight: 600; }
+        .vm-box p { font-size: 1.05rem; line-height: 1.8; color: #dcdcdc; font-weight: 300; }
+
+        /* ====== LUXURY TEXT ANIMATION ====== */
+        .animate-text { opacity: 1; } 
+        .char { 
+            display: inline-block; 
+            opacity: 0; 
+            transform: translateY(30px) scale(0.8); 
+            filter: blur(5px);
+            animation: luxuryReveal 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; 
+        }
+
+        @keyframes luxuryReveal { 
+            0% { opacity: 0; transform: translateY(30px) scale(0.8); filter: blur(5px); } 
+            100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); } 
+        }
+
+        /* ====== MOBILE VIEW ====== */
+        @media (max-width: 768px) {
+            .menu-btn { display: flex; }
+            .desktop-nav { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(4, 9, 20, 0.98); backdrop-filter: blur(10px); flex-direction: column; justify-content: center; align-items: center; gap: 40px; transform: translateY(-100%); transition: transform 0.5s ease-in-out; }
+            .desktop-nav.active { transform: translateY(0); }
+            .desktop-nav a { font-size: 20px; letter-spacing: 5px; }
+            
+            .section-title { font-size: 2.8rem; }
+            .vm-grid { grid-template-columns: 1fr; gap: 20px; }
+            .content-box { padding: 30px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
+    <!-- Mobile Menu Toggle -->
+    <div class="menu-btn" id="menuBtn" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="desktop-nav" id="navMenu">
+        <a href="Home.html">HOME</a>
+        <a href="service.html">SERVICES</a>
+        <a href="about.html">ABOUT</a>
+        <a href="logistics.html">LOGISTICS</a>
+        <a href="contact.html">CONTACT</a>
+    </nav>
+
+    <!-- Logistics Content -->
+    <div class="logistics-wrapper">
+        <h1 class="section-title animate-text" data-type="char">LOGISTICS</h1>
+        <p class="section-subtitle animate-text" data-type="word">Precision in Motion. Excellence in Delivery.</p>
+
+        <!-- Overview -->
+        <div class="content-box">
+            <h3 class="animate-text" data-type="char">Seamless Global & Local Transit</h3>
+            <p class="animate-text" data-type="word">At S.R. Premier Global International, our logistics and transport division is the dynamic heartbeat of our operations. We understand that in modern business, the swift and secure movement of assets is paramount. Our logistics framework is engineered to deliver flawless execution, ensuring that whether we are moving high-end electronics, commercial agricultural products, or delicate retail goods, your cargo reaches its destination with absolute precision.</p>
+        </div>
+
+        <!-- Core Services -->
+        <div class="vm-grid">
+            <div class="vm-box">
+                <h3 class="animate-text" data-type="char">Commercial Freight</h3>
+                <p class="animate-text" data-type="word">Comprehensive transport solutions meticulously designed for bulk and commercial goods, offering highly secure handling from the point of origin to the final destination.</p>
+            </div>
+            <div class="vm-box">
+                <h3 class="animate-text" data-type="char">Custom Transport Solutions</h3>
+                <p class="animate-text" data-type="word">Driven by an intricate mastery of local and regional routes, we provide highly reliable, personalized transport services that flawlessly adapt to your unique scheduling demands.</p>
+            </div>
+        </div>
+
+        <!-- The Advantage -->
+        <div class="content-box">
+            <h3 class="animate-text" data-type="char">The Premier Advantage</h3>
+            
+            <h4 class="animate-text" data-type="char">Safe & Secure Handling</h4>
+            <p class="animate-text" data-type="word">Meticulous attention to detail ensuring zero-compromise on cargo safety across all transit phases.</p>
+            
+            <h4 class="animate-text" data-type="char">Time-Critical Precision</h4>
+            <p class="animate-text" data-type="word">Unwavering commitment to punctuality and operational efficiency, guaranteeing on-time deliveries every single time.</p>
+            
+            <h4 class="animate-text" data-type="char">Comprehensive Network</h4>
+            <p class="animate-text" data-type="word">A robust and deeply integrated transit infrastructure capable of navigating complex logistical challenges seamlessly.</p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Hamburger Menu
+        function toggleMenu() {
+            document.getElementById('navMenu').classList.toggle('active');
+        }
+
+        // Luxury Text Animation Logic
+        document.addEventListener("DOMContentLoaded", () => {
+            const elements = document.querySelectorAll('.animate-text');
+            
+            elements.forEach((el) => {
+                const text = el.textContent || el.innerText;
+                const type = el.getAttribute('data-type');
+                el.innerHTML = ''; 
+                let delay = 0;
+
+                if (type === 'char') {
+                    text.split('').forEach(char => {
+                        const span = document.createElement('span');
+                        span.textContent = char === ' ' ? '\u00A0' : char; 
+                        span.className = 'char';
+                        span.style.animationDelay = `${delay}s`;
+                        el.appendChild(span);
+                        delay += 0.035; 
+                    });
+                } else if (type === 'word') {
+                    text.split(' ').forEach(word => {
+                        if (word.trim() !== '') { 
+                            const span = document.createElement('span');
+                            span.textContent = word + '\u00A0'; 
+                            span.className = 'char';
+                            span.style.animationDelay = `${delay}s`;
+                            el.appendChild(span);
+                            delay += 0.015; 
+                        }
+                    });
+                }
+            });
+        });
+
+        // Particles Background
+        particlesJS("particles-js", {
+            "particles": { "number": { "value": 60 }, "color": { "value": "#d4af37" }, "shape": { "type": "circle" }, "opacity": { "value": 0.3 }, "size": { "value": 2 }, "line_linked": { "enable": false }, "move": { "enable": true, "speed": 0.8, "direction": "top" } },
+            "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": true, "mode": "bubble" } } }, "retina_detect": true
+        });
+    </script>
+</body>
+</html>

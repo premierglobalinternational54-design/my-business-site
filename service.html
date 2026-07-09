@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - S.R. Premier</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body, html { width: 100%; min-height: 100%; font-family: 'Montserrat', sans-serif; background-color: #040914; color: #fff; }
+        #particles-js { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: 1; }
+        nav { position: absolute; top: 0; left: 0; width: 100%; padding: 30px 20px; display: flex; justify-content: center; flex-wrap: wrap; gap: 40px; z-index: 100; background: rgba(4, 9, 20, 0.8); }
+        nav a { color: #d4af37; text-decoration: none; font-size: 15px; letter-spacing: 2px; transition: 0.3s; font-weight: bold; padding: 5px 10px; }
+        nav a:hover { color: #fff; text-shadow: 0 0 15px #d4af37; transform: scale(1.1); }
+        .services-container { position: relative; z-index: 50; max-width: 1200px; margin: 120px auto 50px; padding: 20px; animation: fadeUp 1s ease-out forwards; }
+        .services-title { font-family: 'Cinzel', serif; color: #d4af37; text-align: center; font-size: 3rem; margin-bottom: 10px; text-shadow: 0 0 15px rgba(212, 175, 55, 0.4); }
+        .services-subtitle { text-align: center; color: #a9a9a9; letter-spacing: 3px; margin-bottom: 50px; text-transform: uppercase; font-size: 0.9rem;}
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .service-box { background: rgba(10, 15, 25, 0.8); border: 1px solid #d4af37; padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.5); transition: 0.3s; }
+        .service-box:hover { box-shadow: 0 10px 25px rgba(212, 175, 55, 0.2); }
+        .service-box h3 { color: #f3e5ab; font-family: 'Cinzel', serif; font-size: 1.5rem; margin-bottom: 20px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); padding-bottom: 10px; text-align: center; }
+        
+        .service-list { list-style: none; }
+        .service-list li { margin-bottom: 15px; padding-left: 25px; position: relative; }
+        .service-list li::before { content: '✦'; color: #d4af37; position: absolute; left: 0; font-size: 18px; top: 0; }
+        
+        /* New Styles for Clickable Links */
+        .service-list a { color: #e0e0e0; text-decoration: none; font-size: 15px; letter-spacing: 1px; display: inline-block; transition: all 0.3s ease; }
+        .service-list a:hover { color: #d4af37; transform: translateX(8px); text-shadow: 0 0 8px rgba(212, 175, 55, 0.5); }
+
+        @keyframes fadeUp { 0% { opacity: 0; transform: translateY(30px); } 100% { opacity: 1; transform: translateY(0); } }
+        @media (max-width: 768px) { nav { gap: 15px; } nav a { font-size: 12px; } .services-title { font-size: 2rem; } }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+    <nav>
+        <a href="Home.html">HOME</a>
+        <a href="service.html">SERVICES</a>
+        <a href="about.html">ABOUT</a>
+        <a href="logistics.html">LOGISTICS</a>
+        <a href="contact.html">CONTACT</a>
+    </nav>
+
+    <div class="services-container">
+        <h1 class="services-title">NATURE OF BUSINESS</h1>
+        <p class="services-subtitle">Click on any service to explore more details</p>
+        
+        <div class="services-grid">
+            <!-- Category 1 -->
+            <div class="service-box">
+                <h3>Services & Solutions</h3>
+                <ul class="service-list">
+                    <li><a href="adventure.html">Adventure and Hotel</a></li>
+                    <li><a href="tourism.html">Tourism Services</a></li>
+                    <li><a href="event-planning.html">Event Planning</a></li>
+                    <li><a href="consulting.html">Consulting</a></li>
+                    <li><a href="marketing.html">Marketing Services</a></li>
+                    <li><a href="tech.html">Tech and Digital Services</a></li>
+                    <li><a href="ict.html">ICT Solution Services</a></li>
+                    <li><a href="delivery.html">Delivery and Logistics</a></li>
+                    <li><a href="cleaning.html">Cleaning Service</a></li>
+                </ul>
+            </div>
+
+            <!-- Category 2 -->
+            <div class="service-box">
+                <h3>Products & Equipment</h3>
+                <ul class="service-list">
+                    <li><a href="electronics.html">Electronics</a></li>
+                    <li><a href="mobile-accessories.html">Mobile Accessories</a></li>
+                    <li><a href="power-tools.html">Power & Hardware Tools</a></li>
+                    <li><a href="furniture.html">Furniture & School Items</a></li>
+                    <li><a href="branded-equipment.html">Branded Equipment</a></li>
+                    <li><a href="vehicle-accessories.html">Vehicle Accessories</a></li>
+                    <li><a href="game-items.html">Game Items</a></li>
+                    <li><a href="camping-items.html">Camping Items</a></li>
+                </ul>
+            </div>
+
+            <!-- Category 3 -->
+            <div class="service-box">
+                <h3>Trade & Lifestyle</h3>
+                <ul class="service-list">
+                    <li><a href="import-export.html">Import and Export</a></li>
+                    <li><a href="retail-wholesale.html">Retail and Wholesale</a></li>
+                    <li><a href="online-selling.html">Online Selling</a></li>
+                    <li><a href="food-beverages.html">Food and Beverages</a></li>
+                    <li><a href="agriculture.html">Agriculture Products</a></li>
+                    <li><a href="eco-friendly.html">Eco-Friendly Products</a></li>
+                    <li><a href="fabrics.html">Fabrics and Clothes</a></li>
+                    <li><a href="perfume-cosmetics.html">Perfume and Cosmetics</a></li>
+                    <li><a href="garden-interior.html">Garden and Interior</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS("particles-js", {
+            "particles": { "number": { "value": 100 }, "color": { "value": "#d4af37" }, "shape": { "type": "circle" }, "opacity": { "value": 0.5 }, "size": { "value": 2 }, "line_linked": { "enable": false }, "move": { "enable": true, "speed": 1, "direction": "top" } },
+            "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": true, "mode": "bubble" } }, "modes": { "bubble": { "distance": 200, "size": 4, "duration": 2 } } }, "retina_detect": true
+        });
+    </script>
+</body>
+</html>

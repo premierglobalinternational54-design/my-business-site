@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agricultural Products - S.R. Premier</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #040914; color: #fff; font-family: 'Montserrat', sans-serif; overflow-x: hidden; }
+        #particles-js { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: 1; pointer-events: none; }
+        
+        .content-wrapper { position: relative; z-index: 50; max-width: 900px; margin: 50px auto; padding: 0 20px; text-align: center; }
+        
+        .hero-title { font-family: 'Playfair Display', serif; font-size: 3rem; color: #d4af37; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 2px; }
+        
+        .service-img { width: 100%; max-width: 800px; border-radius: 15px; border: 2px solid #d4af37; margin-bottom: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        
+        .description { font-size: 1.1rem; line-height: 1.8; color: #ccc; margin-bottom: 40px; text-align: justify; }
+        
+        .btn-whatsapp { display: inline-block; padding: 15px 40px; background: #25D366; color: white; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 1.2rem; transition: 0.3s; }
+        .btn-whatsapp:hover { background: #128C7E; transform: scale(1.05); }
+
+        /* ජංගම දුරකථන සඳහා විශේෂ සැකසුම් */
+        @media (max-width: 600px) {
+            .hero-title { font-size: 2rem; margin-bottom: 20px; }
+            .description { font-size: 1rem; text-align: center; margin-bottom: 30px; }
+            .content-wrapper { margin: 20px auto; }
+            .btn-whatsapp { font-size: 1rem; padding: 12px 25px; width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+
+    <div class="content-wrapper">
+        <h1 class="hero-title">Agricultural Products</h1>
+        
+        <img src="agricultural-products.jpg" alt="Agricultural Products" class="service-img">
+        
+        <div class="description">
+            <p>We specialize in providing high-quality agricultural products sourced directly from the best farms. From fresh produce to organic commodities, our focus is on health, quality, and sustainable practices. We cater to both local and international markets, ensuring that our supply chain maintains the highest standards of freshness and integrity. Connect with us to discuss your wholesale or bulk requirements.</p>
+        </div>
+        
+        <a href="https://wa.me/94718888609?text=Hi, I would like to inquire about your Agricultural products." class="btn-whatsapp" target="_blank">INQUIRE ON WHATSAPP</a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS("particles-js", {
+            "particles": { "number": { "value": 50 }, "color": { "value": "#d4af37" }, "opacity": { "value": 0.3 } }
+        });
+    </script>
+</body>
+</html>

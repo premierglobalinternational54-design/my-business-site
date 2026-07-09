@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S.R. Premier Global International</title>
+    
+    <!-- Ultra-Luxury Fonts from Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            width: 100%;
+            height: 100%;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #040914; /* Dark premium background */
+            overflow-x: hidden;
+            color: #fff;
+        }
+
+        /* Particles Background */
+        #particles-js {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: 1; 
+        }
+
+        /* ====== PREMIUM DESKTOP NAVIGATION BAR ====== */
+        .desktop-nav {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 30px 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 60px;
+            z-index: 100;
+            background: linear-gradient(to bottom, rgba(4, 9, 20, 0.9) 0%, rgba(4, 9, 20, 0) 100%);
+        }
+
+        .desktop-nav a {
+            font-family: 'Playfair Display', serif;
+            color: #d4af37;
+            text-decoration: none;
+            font-size: 15px;
+            letter-spacing: 3px; 
+            transition: all 0.4s ease;
+            font-weight: 500;
+            position: relative;
+            padding-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .desktop-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 1px;
+            background-color: #f3e5ab;
+            transition: width 0.4s ease;
+        }
+
+        .desktop-nav a:hover {
+            color: #f3e5ab;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+
+        .desktop-nav a:hover::after {
+            width: 100%;
+        }
+
+        /* ====== MOBILE MENU TOGGLE BUTTON ====== */
+        .menu-btn {
+            display: none;
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            z-index: 1000;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .menu-btn span {
+            width: 30px;
+            height: 2px;
+            background-color: #d4af37;
+            transition: 0.3s;
+        }
+
+        /* Main Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 50; 
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        /* ====== IMAGE LOGO (මෙතැනින් තමයි ප්‍රමාණය ලොකු කළේ) ====== */
+        .image-logo {
+            width: 220px;  /* කලින් තිබ්බේ 140px, දැන් ගොඩක් ලොකුයි */
+            height: 220px; /* කලින් තිබ්බේ 140px */
+            border-radius: 50%; 
+            object-fit: cover;
+            margin-bottom: 30px;
+            box-shadow: 0 0 35px rgba(212, 175, 55, 0.5), 0 0 20px rgba(212, 175, 55, 0.3);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 1s ease-out forwards;
+            border: 3px solid rgba(212, 175, 55, 0.7);
+        }
+
+        /* Text Animation CSS */
+        .title-main {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            font-weight: 700;
+            background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 1s ease-out 0.3s forwards;
+        }
+
+        .title-sub {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            letter-spacing: 10px;
+            color: #d4af37;
+            margin-bottom: 30px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 1s ease-out 0.6s forwards;
+            font-weight: 300;
+        }
+
+        .tagline {
+            font-size: 0.9rem;
+            color: #a9a9a9;
+            letter-spacing: 4px;
+            margin-bottom: 45px;
+            position: relative;
+            opacity: 0;
+            animation: fadeUp 1s ease-out 0.9s forwards;
+            text-transform: uppercase;
+        }
+
+        .tagline::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 1px;
+            background: #d4af37;
+        }
+
+        /* Premium Button */
+        .btn-discover {
+            padding: 15px 45px;
+            border: 1px solid rgba(212, 175, 55, 0.5);
+            background: transparent;
+            color: #d4af37;
+            font-size: 13px;
+            letter-spacing: 3px;
+            cursor: pointer;
+            border-radius: 30px;
+            transition: all 0.4s ease;
+            opacity: 0;
+            animation: fadeUp 1s ease-out 1.2s forwards;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .btn-discover:hover {
+            background: rgba(212, 175, 55, 0.1);
+            border-color: #d4af37;
+            color: #f3e5ab;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+        }
+
+        /* Keyframes for animations */
+        @keyframes fadeUp {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ======= MOBILE VIEW OPTIMIZATION ======= */
+        @media (max-width: 768px) {
+            .menu-btn { display: flex; }
+            
+            .desktop-nav {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: rgba(4, 9, 20, 0.98);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 40px;
+                transform: translateY(-100%);
+                transition: transform 0.5s ease-in-out;
+            }
+
+            .desktop-nav.active {
+                transform: translateY(0);
+            }
+
+            .desktop-nav a { 
+                font-size: 20px; 
+                letter-spacing: 5px; 
+            }
+            
+            /* Resize image logo for mobile - මේකත් ලොකු කළා */
+            .image-logo { width: 140px; height: 140px; margin-bottom: 25px; }
+            
+            .title-main { font-size: 2.8rem; }
+            .title-sub { font-size: 0.8rem; letter-spacing: 6px; }
+            .tagline { font-size: 0.7rem; letter-spacing: 3px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
+    <!-- Mobile Menu Toggle Button -->
+    <div class="menu-btn" id="menuBtn" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="desktop-nav" id="navMenu">
+        <a href="Home.html">HOME</a>
+        <a href="service.html">SERVICES</a>
+        <a href="about.html">ABOUT</a>
+        <a href="logistics.html">LOGISTICS</a>
+        <a href="contact.html">CONTACT</a>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="hero">
+        
+        <!-- Image Logo added here -->
+        <img src="4797_3.jpeg" alt="SR Premier Logo" class="image-logo">
+        
+        <h1 class="title-main">S.R. PREMIER</h1>
+        <h2 class="title-sub">GLOBAL SERVICES</h2>
+        <p class="tagline">Premium Business Solutions</p>
+        <button class="btn-discover" onclick="window.location.href='service.html'">DISCOVER MORE</button>
+    </div>
+
+    <!-- Particles.js Library -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
+    <!-- Custom Scripts -->
+    <script>
+        // Hamburger Menu Logic
+        function toggleMenu() {
+            const nav = document.getElementById('navMenu');
+            nav.classList.toggle('active');
+        }
+
+        // Particles Configuration
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 120, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#d4af37" },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.6, "random": true, "anim": { "enable": true, "speed": 1, "opacity_min": 0.1, "sync": false } },
+                "size": { "value": 2, "random": true, "anim": { "enable": true, "speed": 2, "size_min": 0.1, "sync": false } },
+                "line_linked": { "enable": false },
+                "move": { "enable": true, "speed": 1, "direction": "top", "random": true, "straight": false, "out_mode": "out", "bounce": false }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": { "onhover": { "enable": true, "mode": "bubble" }, "resize": true },
+                "modes": { "bubble": { "distance": 200, "size": 4, "duration": 2, "opacity": 1, "speed": 3 } }
+            },
+            "retina_detect": true
+        });
+    </script>
+</body>
+</html>
